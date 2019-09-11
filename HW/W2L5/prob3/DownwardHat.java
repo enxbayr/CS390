@@ -1,0 +1,9 @@
+package W2L5.prob3;
+
+public class DownwardHat implements Figure {
+	@Override
+	public void getFigure() {
+		System.out.print("\u005C\\u002F");
+	}
+
+}
