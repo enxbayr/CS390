@@ -92,6 +92,16 @@ public class Conversion extends JFrame {
 		pnlMain.add(pnlInput,BorderLayout.CENTER);
 		pnlMain.add(pnlBtn,BorderLayout.SOUTH);
 		
+		tfMile.setText("0.000000");
+		tfPound.setText("0.000000");
+		tfGallon.setText("0.000000");
+		tfFahr.setText("0.000000");
+		
+		tfKM.setEditable(false);
+		tfKG.setEditable(false);
+		tfLiter.setEditable(false);
+		tfCentri.setEditable(false);
+		
 		btnConvert.addActionListener(e -> {
 			tfKM.setText(Double.toString(Double.parseDouble(tfMile.getText())*1.609344));
 			tfKG.setText(Double.toString(Double.parseDouble(tfPound.getText())*0.45359237 ));
