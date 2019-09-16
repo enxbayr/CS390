@@ -92,8 +92,13 @@ public class Conversion extends JFrame {
 		pnlMain.add(pnlInput,BorderLayout.CENTER);
 		pnlMain.add(pnlBtn,BorderLayout.SOUTH);
 		
-		btnConvert.addActionListener(new ButtonListenerConvert());
-		
+		btnConvert.addActionListener(e -> {
+			tfKM.setText(Double.toString(Double.parseDouble(tfMile.getText())*1.609344));
+			tfKG.setText(Double.toString(Double.parseDouble(tfPound.getText())*0.45359237 ));
+			tfLiter.setText(Double.toString(Double.parseDouble(tfGallon.getText())*3.78541178));
+			tfCentri.setText(Double.toString((Double.parseDouble(tfFahr.getText())-32)*0.555555555555556));
+		});
+	
 		jframe.getContentPane().add(pnlMain);
 
 		//jframe.setSize(200,300);
