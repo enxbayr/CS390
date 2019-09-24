@@ -8,6 +8,7 @@ public class MyTableTest {
 		t.add('a', "Andrew");
 		t.add('b',"Billy");
 		t.add('w',"Willie");
+		t.add('a',"Andy");
 		
 		System.out.println(t);
 

@@ -1,38 +1,31 @@
 package W2L7;
 
 public class MyTable {
-	private Entry[] entries = new Entry[26];
-	
+	private Entry[] entries;
+
 	MyTable() {
-		for(int i = 0; i < entries.length; i++) {
-			entries[i] = new Entry((char)(97+i), null);
-		}	
+		entries = new Entry[26];
 	}
 
 	public String get(char c) {
 		String tmp = null;
-		for(Entry e : entries) {
-			if(e.getCh()=='c') {
-				tmp = e.getStr();
-			}
-		}
+		int i = (int) c - 97;
+		tmp = entries[i].toString();
 		return tmp;
 	}
 
 	public void add(char c, String s) {
-		for(Entry e : entries) {
-			if(e.getCh()==c) {
-				e.setStr(s);
-			}
-		} 
+		int i = (int) c - 97;
+		Entry e = new Entry(c, s);
+		entries[i] = e;
 	}
 
 	public String toString() {
-		
+
 		String list = "";
-		
-		for(Entry e : entries) {
-			if(e.getStr()!=null) {
+
+		for (Entry e : entries) {
+			if (e != null) {
 				list += e.toString() + '\n';
 			}
 		}
@@ -43,21 +36,9 @@ public class MyTable {
 	private class Entry {
 		private char ch;
 		private String str;
-		
+
 		Entry(char ch, String str) {
 			this.ch = ch;
-			this.str = str;
-		}
-
-		public char getCh() {
-			return ch;
-		}
-
-		public String getStr() {
-			return str;
-		}
-
-		public void setStr(String str) {
 			this.str = str;
 		}
 

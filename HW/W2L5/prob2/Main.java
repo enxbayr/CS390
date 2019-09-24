@@ -10,15 +10,16 @@ public class Main {
 		double totalSal = 0;
 
 		for (DeptEmployee emp : emps) {
-			if (emp instanceof Professor) {
-				Professor p = (Professor) emp;
-				totalSal += p.computeSalary();
-			}
+			//if (emp instanceof Professor) {
+			//	Professor p = (Professor) emp;
+			//	totalSal += p.computeSalary();
+			//}
 
-			if (emp instanceof Secretary) {
-				Secretary s = (Secretary) emp;
-				totalSal += s.computeSalary();
-			}
+			//if (emp instanceof Secretary) {
+			//	Secretary s = (Secretary) emp;
+			//	totalSal += s.computeSalary();
+			//}
+			totalSal += emp.computeSalary();
 		}
 
 		System.out.println("TOTAL SALARY: " + totalSal);

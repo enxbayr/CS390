@@ -52,8 +52,11 @@ public class Computer {
 		int result = 11 * seed + manufacturer.hashCode();
 		result = 13 * result + processor.hashCode();
 		result = 17 * result + ramSize;
-		result = 19 * result + (int)processorSpeed;
-		return result;
+		
+		long temp = Double.doubleToLongBits(processorSpeed);
+		int x = (int)(temp^(temp>>>32));
+		result += x;
+		return Math.abs(result);
 
 	} 
 
